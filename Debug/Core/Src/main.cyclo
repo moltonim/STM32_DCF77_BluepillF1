@@ -1,0 +1,7 @@
+../Core/Src/main.c:66:9:dcf77_input_provider	1
+../Core/Src/main.c:80:13:dcf77_print_time	9
+../Core/Src/main.c:115:5:main	10
+../Core/Src/main.c:200:6:SystemClock_Config	3
+../Core/Src/main.c:240:6:HAL_TIM_PeriodElapsedCallback	2
+../Core/Src/main.c:255:6:HAL_UART_TxCpltCallback	2
+../Core/Src/main.c:272:6:Error_Handler	1
