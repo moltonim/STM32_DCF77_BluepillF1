@@ -28,6 +28,7 @@ extern "C" {
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
+#include "debug.h"
 
 #ifndef min
 #define min(x, y) (((x) < (y)) ? (x) : (y))
@@ -59,7 +60,8 @@ extern UART_HandleTypeDef huart2;
  * ----------------------------------------------------------------------- */
 static inline void _dcf_tx(const uint8_t *buf, uint16_t len)
 {
-    HAL_UART_Transmit(&huart2, (uint8_t*)buf, len, HAL_MAX_DELAY);
+    //HAL_UART_Transmit(&huart2, (uint8_t*)buf, len, HAL_MAX_DELAY);
+	APP_DEBUG(DBG_TRACE, (const char*) buf);
 }
 
 static inline void _dcf_crlf(void)

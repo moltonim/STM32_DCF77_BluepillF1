@@ -1,8 +1,0 @@
-../Core/Src/debug.c:57:5:DBG_is_enabled	1
-../Core/Src/debug.c:67:5:DBG_ready_for_tx	2
-../Core/Src/debug.c:97:6:DBG_msg_fmt	3
-../Core/Src/debug.c:148:6:DBG_msg_fmt_buf	5
-../Core/Src/debug.c:204:6:DBG_msg_fmt_buf16	5
-../Core/Src/debug.c:260:6:DBG_msg_fmt_buf32	5
-../Core/Src/debug.c:312:5:DBG_init_with_configuration	2
-../Core/Src/debug.c:335:6:DBG_TX_Complete_Callback	1

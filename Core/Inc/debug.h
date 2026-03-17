@@ -92,9 +92,9 @@ void DBG_msg_fmt_buf32(const uint32_t* data, uint32_t size, const char* fmt, ...
 // Global macros used for enable debug log's
 // If this macros are commented (or definitions are removed) the logging features for module(s) are removed from code and it consume less space */
 #define APPLICATION_DEBUG_ENABLE        /**< Enable Application debug messages */
-#define MEASURE_DEBUG_ENABLE			/**< Enable Measurement (metrologic) debug messages */
-#define ESP32_DEBUG_ENABLE				/**< Enable ESP32 communication debug messages */
-#define SENSOR_DEBUG_ENABLE				/**< Enable MAF sensor debug messages */
+//#define MEASURE_DEBUG_ENABLE			/**< Enable Measurement (metrologic) debug messages */
+//#define ESP32_DEBUG_ENABLE				/**< Enable ESP32 communication debug messages */
+//#define SENSOR_DEBUG_ENABLE				/**< Enable MAF sensor debug messages */
 
 // Main macros for debug output for APPLICATION module
 #ifdef APPLICATION_DEBUG_ENABLE
@@ -107,45 +107,6 @@ void DBG_msg_fmt_buf32(const uint32_t* data, uint32_t size, const char* fmt, ...
     #define APP_DUMP(Level, buf, len, ...)
 	#define APP_DUMP32(Level, buf, len, ...)
 #endif	// APPLICATION_DEBUG_ENABLE
-
-
-// Main macros for debug output for MEASUREMENT(METROLOGIC) module
-#ifdef MEASURE_DEBUG_ENABLE
-    #define MEAS_DEBUG(Level, ...)	            do {if(DBG_is_enabled(MODULE_MEASURE, Level)) DBG_msg_fmt(__VA_ARGS__);} while (0)
-    #define MEAS_DUMP(Level, buf, len, ...)     do {if(DBG_is_enabled(MODULE_MEASURE, Level)) DBG_msg_fmt_buf(buf, len,  __VA_ARGS__);} while (0)
-	#define MEAS_DUMP16(Level, buf, len, ...)   do {if(DBG_is_enabled(MODULE_MEASURE, Level)) DBG_msg_fmt_buf16(buf, len,  __VA_ARGS__);} while (0)
-	#define MEAS_DUMP32(Level, buf, len, ...)	do {if(DBG_is_enabled(MODULE_MEASURE, Level)) DBG_msg_fmt_buf32(buf, len,  __VA_ARGS__);} while (0)
-#else
-    #define MEAS_DEBUG(Level, ...)
-    #define MEAS_DUMP(Level, buf, len, ...)
-	#define MEAS_DUMP32(Level, buf, len, ...)
-#endif	// MEASURE_DEBUG_ENABLE
-
-
-// Main macros for debug output for ESP32 module
-#ifdef ESP32_DEBUG_ENABLE
-    #define ESP32_DEBUG(Level, ...)	            do {if(DBG_is_enabled(MODULE_ESP32, Level)) DBG_msg_fmt(__VA_ARGS__);} while (0)
-    #define ESP32_DUMP(Level, buf, len, ...)    do {if(DBG_is_enabled(MODULE_ESP32, Level)) DBG_msg_fmt_buf(buf, len,  __VA_ARGS__);} while (0)
-	#define ESP32_DUMP16(Level, buf, len, ...)  do {if(DBG_is_enabled(MODULE_ESP32, Level)) DBG_msg_fmt_buf16(buf, len,  __VA_ARGS__);} while (0)
-	#define ESP32_DUMP32(Level, buf, len, ...)	do {if(DBG_is_enabled(MODULE_ESP32, Level)) DBG_msg_fmt_buf32(buf, len,  __VA_ARGS__);} while (0)
-#else
-    #define ESP32_DEBUG(Level, ...)
-    #define ESP32_DUMP(Level, buf, len, ...)
-	#define ESP32_DUMP32(Level, buf, len, ...)
-#endif	// ESP32_DEBUG_ENABLE
-
-// Main macros for debug output for SENSOR module
-#ifdef SENSOR_DEBUG_ENABLE
-    #define SENSOR_DEBUG(Level, ...)	        do {if(DBG_is_enabled(MODULE_SENSOR, Level)) DBG_msg_fmt(__VA_ARGS__);} while (0)
-    #define SENSOR_DUMP(Level, buf, len, ...)   do {if(DBG_is_enabled(MODULE_SENSOR, Level)) DBG_msg_fmt_buf(buf, len,  __VA_ARGS__);} while (0)
-	#define SENSOR_DUMP16(Level, buf, len, ...) do {if(DBG_is_enabled(MODULE_SENSOR, Level)) DBG_msg_fmt_buf16(buf, len,  __VA_ARGS__);} while (0)
-	#define SENSOR_DUMP32(Level, buf, len, ...)	do {if(DBG_is_enabled(MODULE_SENSOR, Level)) DBG_msg_fmt_buf32(buf, len,  __VA_ARGS__);} while (0)
-#else
-    #define SENSOR_DEBUG(Level, ...)
-    #define SENSOR_DUMP(Level, buf, len, ...)
-	#define SENSOR_DUMP32(Level, buf, len, ...)
-#endif	// ESP32_DEBUG_ENABLE
-
 
 int DBG_init_with_configuration(const DBG_CONFIG* pDbgCfg);
 void DBG_TX_Complete_Callback(void);
