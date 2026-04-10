@@ -58,6 +58,25 @@ Feedback from the community is highly appreciated to make this porting more robu
 
 ---
 
+## 📝 Important Notes & Hardware Tips
+
+### Testing Status: Bluepill USB
+Due to a hardware failure (a broken antenna), I have not yet been able to fully field-test the **Bluepill USB** version. This specific setup is designed to use the native USB port for both power and serial communication. 
+
+I believe this version is particularly useful for studying **signal recognition timing**, as it allows you to move the antenna and the processor far away from electromagnetic interference (EMI) sources, such as PCs or power supplies, using a single cable.
+
+### Portability
+The projects listed here are highly modular. You can easily adapt the code to other microcontrollers within the **STM32 family** with minimal changes in the CubeMX configuration.
+
+### Status LEDs (Recommended)
+I highly recommend using external LEDs to monitor the internal state of the library. For example:
+*   **LED 1**: Initialization/Searching phase.
+*   **LED 2 (Green)**: Successful time synchronization.
+
+In the **L010 project**, there are already designated digital output pins that you can easily initialize and connect to external LEDs to get immediate visual feedback on the decoding process.
+
+---
+
 ## 👨‍💻 About Me
 
 I am a veteran Electronic Engineer with over 30 years of experience in firmware development. 
